@@ -2,6 +2,9 @@ package edu.mum.cs;
 
 
 import edu.mum.cs.domain.BranchEntity;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -14,6 +17,7 @@ public class Main {
 
         try {
 
+
             EntityManagerFactory emf = Persistence.createEntityManagerFactory("edu.mum.cs");
 
             EntityManager em = emf.createEntityManager();
@@ -24,7 +28,7 @@ public class Main {
 
             System.out.println("1---------------");
             em.persist(branch);
-            System.out.println(branch);
+           // System.out.println(branch);
             System.out.println("2---------------");
             branch.setBranchName("test");
             System.out.println("3---------------");

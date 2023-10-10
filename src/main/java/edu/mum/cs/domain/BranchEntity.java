@@ -7,26 +7,26 @@ import java.sql.Date;
 
 @Entity
 public class BranchEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long branchId;
+    private String branchName;
+    private Integer mgrId;
+    private Date mgrStartDate;
+    public BranchEntity(){
+    }
     public BranchEntity(String branchName) {
         this.branchName = branchName;
     }
 
-    public BranchEntity(){
-    }
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int branchId;
-
-    public int getBranchId() {
+    public Long getBranchId() {
         return branchId;
     }
 
-    public void setBranchId(int branchId) {
+    public void setBranchId(Long branchId) {
         this.branchId = branchId;
     }
-
-
-    private String branchName;
 
     public String getBranchName() {
         return branchName;
@@ -35,10 +35,6 @@ public class BranchEntity {
     public void setBranchName(String branchName) {
         this.branchName = branchName;
     }
-
-
-    private Integer mgrId;
-
     public Integer getMgrId() {
         return mgrId;
     }
@@ -47,13 +43,9 @@ public class BranchEntity {
         this.mgrId = mgrId;
     }
 
-
-    private Date mgrStartDate;
-
     public Date getMgrStartDate() {
         return mgrStartDate;
     }
-
     public void setMgrStartDate(Date mgrStartDate) {
         this.mgrStartDate = mgrStartDate;
     }
